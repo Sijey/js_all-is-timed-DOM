@@ -1,11 +1,11 @@
 'use strict';
+let timerKey = 'timer';
+let timer = 0;
+const timerSpan = document.querySelector('#seconds');
 
-let timer = localStorage.getItem('timer') || 0;
-
-document.body.innerText = `You are ${timer} seconds of website`;
+timerSpan.innerText = timer;
 setInterval(() => {
   timer++;
-  document.body
-    .innerText = `You are ${localStorage.getItem('timer')} seconds of website`;
-  localStorage.setItem('timer', timer);
+  timerSpan.innerText = timer;
+  localStorage.setItem(timerKey, timer);
 }, 1000);
